@@ -1,0 +1,3 @@
+Singleton Design : According to this design pattern , a Singleton class can have only one object. So if we try to create another instance of the Singleton
+class , we will get back the same old instance that was created and new object will not be created. In other words , a Singleton class can only be 
+instantiated once.
