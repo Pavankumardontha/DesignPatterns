@@ -1,0 +1,3 @@
+As the name says , we decorate our objects with this decorator design pattern. Lets say we are in a burger shop and want to bug a burger. The cashier will 
+take our order and asks for topplings which effect the final price of our burger. Each toppling has a fixed amount of price apart from the normal burger 
+cost . So how do we calculate the entire cost of the burger after adding topplings(decorators) to it. ??
