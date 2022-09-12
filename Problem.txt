@@ -1,0 +1,19 @@
+Lets consider we have a weather station which keeps track of temperature and humidity at each place. There are some IOT sensors installed at various 
+centres. These are used to record the temperature and humidity of a particular place and update them to wheather station. Wheather station will have 
+Setparameter(double temperature , double humidity) which is called by the IOT device to update the temperature and humidity. Wheather station just keeps 
+track of these parameters but does not know what to do with these parameters. Lets say there is system-1 which displays current temperature and humidity.
+Lets say there is another system-2 which displays average temperature and humidity based on the past records.So whenever there is some change in temperature
+or humidity , the IOT devices update to the weather station which inturn should update system-1 and system-2. 
+In our case , wheather station is called subject/observable. Systems-1,2 are called observers. They observe the weather station. So we have some 
+observable/subject which has a state associated with it.Whenever the state of this observable/subject changes , it has to update to its observers which 
+are system-1 and system-2.
+How will the observable know who are the observers it needs to notify about the change in its change ?? These observers somehow must subscribe to the 
+observable. So the observable exposes 2 methods 
+a) Registerobserver()
+b) Removeobserver()
+c) notifyobservers()
+
+On the otherhand, observers just need to have one method. 
+a) update()
+
+Whenever an observable wants to notify to each of its observers it calls their update methods. !! 
