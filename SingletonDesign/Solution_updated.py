@@ -21,7 +21,7 @@ class TV:
         # Before changing the channel make sure that no other thread is changing the channel and Tv is free for channel a change. !!!
         with threading.Lock():
             TV.__channel = new_channel
-            print(f"Channel changed to: {new_channel}")
+            print(f"Channel changed to: {TV.__channel}")
 
 
 
