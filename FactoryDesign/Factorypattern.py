@@ -1,3 +1,9 @@
+'''
+We will define 3 shape classes 
+a) Circle 
+b) Square
+c) Triangle
+'''
 class Circle():
     def draw(self):
         print("Circle is drawn")
@@ -11,23 +17,16 @@ class Triangle():
         print("Triangle is drawn")
 
 
-client_input = "circle"
+# This is how the shape object creation code looks at client end without Shapefactory class
+circle_object = Circle()
+circle_object.draw()
+square_object = Square()
+square_object.draw()
+triangle_object = Triangle()
+triangle_object.draw()
+# Notice here that the client needs to interact and remember all the 3 classes to create any shape object
 
-# if there is no factory class 
-if (client_input == "circle" ):
-    client_object = Circle()
-elif (client_input == "square"):
-    client_object = Square()
-elif (client_input == "triangle"):
-    client_object = Triangle()
-else:
-    client_object = None
-
-client_object.draw()
-
-
-
-# Implementing factory class for creating different shapes based on user input.
+# Implementing factory class for creating different shape objects.
 class ShapeFactory():
     def getShape(self,shape):
         if ( shape == "circle" ):
@@ -42,6 +41,12 @@ class ShapeFactory():
 
 # using shapefactory class to create shape object
 shapefactory = ShapeFactory()
-client_object = shapefactory.getShape(client_input)
-client_object.draw()
+circle_object = shapefactory.getShape("circle")
+circle_object.draw()
+square_object = shapefactory.getShape("square")
+square_object.draw()
+triangle_object = shapefactory.getShape("triangle")
+triangle_object.draw()
+# Look how simple the shape object creation looks !!! Client will be very much happy since he/she has to deal with ONLY one class and NOT 3 as before.
+
 
