@@ -30,11 +30,11 @@ client_object.draw()
 # Implementing factory class for creating different shapes based on user input.
 class ShapeFactory():
     def getShape(self,shape):
-        if ( client_input == "circle" ):
+        if ( shape == "circle" ):
             return Circle()
-        elif ( client_input == "square" ):
+        elif ( shape == "square" ):
             return Square()
-        elif ( client_input == "triangle" ):
+        elif ( shape == "triangle" ):
             return Triangle()
         else:
             return None
