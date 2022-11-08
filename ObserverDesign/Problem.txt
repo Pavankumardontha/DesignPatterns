@@ -7,13 +7,13 @@ or humidity , the IOT devices update to the weather station which inturn should 
 In our case , wheather station is called subject/observable. Systems-1,2 are called observers. They observe the weather station. So we have some 
 observable/subject which has a state associated with it.Whenever the state of this observable/subject changes , it has to update to its observers which 
 are system-1 and system-2.
-How will the observable know who are the observers it needs to notify about the change in its change ?? These observers somehow must subscribe to the 
+How will the observable know who are the observers it needs to notify about the change in its state ?? These observers somehow must subscribe to the 
 observable. So the observable exposes 2 methods 
 a) Registerobserver()
 b) Removeobserver()
 c) notifyobservers()
 
-On the otherhand, observers just need to have one method. 
+On the otherhand, observers just need to have one method which will be executed when there is a change in the state of the observable. 
 a) update()
 
 Whenever an observable wants to notify to each of its observers it calls their update methods. !! 
