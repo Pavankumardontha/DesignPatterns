@@ -72,6 +72,6 @@ pavan = PlacementAdmin("Pavan")
 # publish a message in the group
 message = "Attentive is visiting our campus for on 12-12-2022 for Full time SDE roles"
 message_group.publish_message(pavan,message)
-message = "Attentive is visiting our campus for on 12-12-2022 for Full time SDE roles"
+message = "Google is visiting our campus for on 12-12-2022 for Full time SDE roles"
 message_group.publish_message(pavan,message)
 
