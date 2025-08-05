@@ -31,6 +31,33 @@ scope
 within the critical section.
 */
 
+
+// DIFFERENCE BETWEEN MUTEX AND SEMAPHORE
+/*
+Mutex : Mutual exclusion (only one thread at a time can access a resource). It has binary value (locked/unlocked).
+Only one thread that locked it can unlock it. Protects a critical section.
+Locked by a thread → only that same thread can unlock it.
+Prevents accidental unlocking by another thread.
+
+Semaphore: No ownership — any thread can signal (release) it. 	Controls resource pool size or synchronizes events.
+usage:
+Limiting concurrent access to a resource pool (like 3 DB connections).
+Synchronizing producer-consumer problems.
+Example: Allow at most N threads to enter.
+*/
+// Counting Semaphore Example (Max 3 threads at once):
+#include <semaphore>
+std::counting_semaphore<3> sem(3); // capacity 3
+
+void accessResource() {
+    sem.acquire(); // wait
+    std::cout << "Thread " << std::this_thread::get_id() << " inside\n";
+    std::this_thread::sleep_for(std::chrono::seconds(1));
+    sem.release(); // signal
+}
+
+
+
 #include<bits/stdc++.h>
 #include<iostream>
 #include<mutex>
